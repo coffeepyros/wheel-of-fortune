@@ -11,7 +11,7 @@ function animate(spinResult) {
 }
 
 function showScore(score) {
-  document.getElementById("overlay").style.animation = "reveal 2s 3s forwards";
+  document.getElementById("overlay").style.animation = "reveal 2s 4s forwards";
   document.getElementById("final_score").innerHTML = score;
 }
 
