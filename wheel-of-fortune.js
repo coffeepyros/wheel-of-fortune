@@ -7,12 +7,17 @@ var audio = new Audio("spinning_leiser.mp3");
 function animate(spinResult) {
   document.getElementById("wheel").style.animation =
     "spin-" + spinResult + " 5s ease forwards";
-  document.getElementById("score").style.animation = "reveal 5s forwards";
+  //   setTimeout(() => {
+  //     let reverse = spinResult * 45;
+  //     document.getElementById("wheel").style.transform = "rotate(0deg)";
+  //   }, 500);
 }
 
 function showScore(score) {
-  document.getElementById("overlay").style.animation = "reveal 2s 4s forwards";
   document.getElementById("final_score").innerHTML = score;
+  setTimeout(() => {
+    document.getElementById("overlay").style.visibility = "visible";
+  }, 5000);
 }
 
 // Points on the wheel. Starts with first left of orange center and continues
@@ -36,20 +41,31 @@ function play() {
   if (rounds < 2) {
     totalScore += spinPoints;
     rounds++;
-  } else if (rounds == 2) {
+  } else if (rounds === 2) {
     totalScore += spinPoints;
-    rounds++;
     showScore(totalScore);
+    rounds++;
   } else {
     totalScore = spinPoints;
     rounds = 1;
   }
 
+  // FOR DEBUGGING ONLY
+  //   document.getElementById("dev").innerHTML =
+  //     "totalScore:" +
+  //     totalScore +
+  //     "<br>spinPoints: " +
+  //     spinPoints +
+  //     "<br>Rounds:" +
+  //     rounds;
+
   document.getElementById("roundIndicator").innerHTML = "Round #" + rounds;
-  document.getElementById("score").innerHTML = totalScore;
+  setTimeout(() => {
+    document.getElementById("score").innerHTML = totalScore;
+  }, 5000);
 
   // FOR DEVELOPMENT
-  document.getElementById("dev").innerHTML = spinResult;
+  //   document.getElementById("dev").innerHTML = spinResult;
 }
 
 // Used with active overlay to come back to the normal game

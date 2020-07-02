@@ -151,6 +151,7 @@ figure#wheel {
   background-position: center;
 }
 button,
+.link-button,
 figure#score-box {
   padding: 1rem 2rem;
   border-radius: 1rem;
@@ -160,15 +161,21 @@ figure#score-box {
   color: #222;
   box-shadow: 4px 4px 0 hsl(184, 35%, 50%);
 }
-button {
+.link-button {
+  text-decoration: none;
+}
+button,
+.link-button {
   grid-area: play;
   background-color: hsl(31, 100%, 90%);
   border: 1px solid hsl(31, 100%, 60%);
 }
-button:hover {
+button:hover,
+.link-button:hover {
   background-color: hsl(31, 100%, 75%);
 }
-button:active {
+button:active,
+.link-button:active {
   position: relative;
   top: 4px;
   left: 4px;
@@ -200,9 +207,9 @@ button:active {
 }
 
 #dev {
-  font-family: monospace;
-  font-size: 1.2rem;
-  padding: 1rem;
-  text-align: center;
   position: absolute;
+  font-family: monospace;
+  font-size: 1rem;
+  padding: 1rem;
+  color: #999;
 }
