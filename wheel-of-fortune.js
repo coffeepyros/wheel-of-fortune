@@ -1,6 +1,6 @@
 // Recorded myself with Audacity and searched Internet for how
 // to include audio with javascript
-var audio = new Audio("spinning.mp3");
+var audio = new Audio("spinning_leiser.mp3");
 
 // Animation function, gets result and uses according animation CSS class
 // Also waits with the reveal of the result, until the wheel stopped spinning.

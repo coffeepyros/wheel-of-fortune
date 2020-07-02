@@ -40,7 +40,7 @@ body {
 #overlay p {
   font-size: 9rem;
   background-image: linear-gradient(hsl(31, 100%, 80%), hsl(184, 35%, 62%));
-  /* background: -webkit-linear-gradient(#43c6ac, ##f8ffae); */
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
