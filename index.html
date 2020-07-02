@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wheel of Fortune</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section id="overlay">
+      <h1>Final Score</h1>
+      <p id="final_score">0</p>
+      <button onclick="reset()">Play again!</button>
+    </section>
+    <header>
+      <h1>Wheel of Fortune</h1>
+      <p id="roundIndicator">(Not started yet)</p>
+    </header>
+    <main class="game">
+      <figure class="selector"></figure>
+      <figure id="wheel"></figure>
+      <button class="play" onclick="play()">Play</button>
+      <figure id="score-box">Score: <span id="score">0</span></figure>
+    </main>
+    <footer id="dev"></footer>
+    <script src="wheel-of-fortune.js"></script>
+  </body>
+</html>
