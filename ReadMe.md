@@ -1,4 +1,4 @@
-# Wheel of Furtun Version 1.0
+# Wheel of Fortune Version 1.0
 
 Please take a look to the following picture and by using wheel.png file from img directory, try to create this game.
 This game works as following:
