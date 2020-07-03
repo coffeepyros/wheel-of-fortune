@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  font-family: "Righteous", cursive;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(-22.5deg);
+  }
+  100% {
+    transform: rotate(337.5deg);
+  }
+}
+#wheel {
+  width: 50vmin;
+  height: 50vmin;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "top-left top-right"
+    "bottom-left bottom-right";
+  border-radius: 25vmin;
+  overflow: hidden;
+  transform: rotate(-22.5deg);
+  position: relative;
+  animation: spin 4s 0.5s forwards;
+}
+/* Inner Dark Wheel */
+#wheel::after {
+  content: "";
+  width: 5vmin;
+  height: 5vmin;
+  background-color: #222;
+  position: absolute;
+  top: 22.5vmin;
+  left: 22.5vmin;
+  border-radius: 2.5vmin;
+  background-color: #333;
+}
+.quadrant figure {
+  height: 25vmin;
+}
+.top-right {
+  grid-area: top-right;
+  background-color: #dae8fc;
+}
+.bottom-right {
+  grid-area: bottom-right;
+  background-color: #d5e8d4;
+}
+.bottom-left {
+  grid-area: bottom-left;
+  background-color: #dae8fc;
+}
+.top-left {
+  grid-area: top-left;
+  background-color: #e1d5e7;
+}
+.segment-1 {
+  background-color: #ffe6cc;
+  clip-path: polygon(0 0, 0% 100%, 100% 0);
+}
+.segment-3 {
+  background-color: #e1d5e7;
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+.segment-5 {
+  background-color: #e1d5e7;
+  clip-path: polygon(0 100%, 100% 100%, 100% 0);
+}
+.segment-7 {
+  background-color: #d5e8d4;
+  clip-path: polygon(0 0%, 0% 100%, 100% 100%);
+}
+.wheel-label {
+  position: absolute;
+  font-size: 3.5vmin;
+  color: #222;
+  transform: rotate(22.5deg);
+  /* border: 1px solid #f00; */
+}
+.segment-1 .wheel-label {
+  /* top: 0; */
+  top: 5vmin;
+  right: 15vmin;
+}
+/* segment "2" */
+.top-right > .wheel-label {
+  top: 15vmin;
+  right: 5vmin;
+}
+.segment-3 .wheel-label {
+  bottom: 15vmin;
+  right: 5vmin;
+}
+/* segment "4" */
+.bottom-right > .wheel-label {
+  bottom: 5vmin;
+  right: 15vmin;
+}
+.segment-5 .wheel-label {
+  bottom: 5vmin;
+  left: 15vmin;
+}
+/* segment "6" */
+.bottom-left > .wheel-label {
+  bottom: 15vmin;
+  left: 5vmin;
+}
+.segment-7 .wheel-label {
+  top: 15vmin;
+  left: 5vmin;
+}
+/* segment "8" */
+.top-left > .wheel-label {
+  top: 5vmin;
+  left: 15vmin;
+}
